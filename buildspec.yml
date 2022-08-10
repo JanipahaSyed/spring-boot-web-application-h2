@@ -1,19 +1,45 @@
 version: 0.2
 
+           
+
 phases:
+
   install:
+
     runtime-versions:
-      java: corretto17
+
+      java: corretto8
+
+    commands:
+
+      - echo install
+
   pre_build:
+
     commands:
-      - echo Noneed to do in the pre_build phase...
+
+      - echo pre_build
+
   build:
+
     commands:
-      - echo Build started on `date`
+
       - mvn package
+
+      - echo build
+
   post_build:
+
     commands:
-      - echo Build completed on `date`
+
+      - echo post_build
+
+
+
 artifacts:
+
   files:
-    - target\*.war
+
+    - '**/*'
+
+    - target/*.war
