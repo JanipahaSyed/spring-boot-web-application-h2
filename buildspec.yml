@@ -29,15 +29,9 @@ phases:
       - echo build
 
   post_build:
-
     commands:
-
-      - echo post_build
-
-
-
+      - echo Build completed on `date`
+      - mv target/spring-boot-web-application-h2-0.0.1-SNAPSHOT.war ROOT.war
 artifacts:
-
   files:
-    - target/spring-boot-web-application-h2-0.0.1-SNAPSHOT.war
-  discard-paths: yes
+    - ROOT.war
